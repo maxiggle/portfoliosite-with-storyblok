@@ -26,7 +26,7 @@ class _ActionBarState extends ConsumerState<ActionBar> {
         padding: EdgeInsets.only(right: 55.0, top: 33.0),
         child: () {
           ScreenType scrType = AppClass().getScreenType(context);
-          if (scrType == ScreenType.mobile || scrType == ScreenType.tab) {
+          if (scrType == ScreenType.tab) {
             return Row(
               children: [
                 Expanded(

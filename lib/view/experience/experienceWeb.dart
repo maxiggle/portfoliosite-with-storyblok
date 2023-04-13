@@ -4,7 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:portfolio/controller/cubit/experience_cubit.dart';
 import 'package:portfolio/resource/app_class.dart';
 import '../../resource/colors.dart';
-import '../../resource/strings.dart';
+
 
 class ExperienceWeb extends StatefulWidget {
   const ExperienceWeb({Key? key}) : super(key: key);

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/resource/styles.dart';
-enum ScreenType { mobile, tab, web }
+
+enum ScreenType {tab, web }
 
 class AppClass {
   static final AppClass _mAppClass = AppClass._internal();
@@ -11,7 +12,6 @@ class AppClass {
   static final api =
       "https://api.storyblok.com/v2/cdn/stories?token=U5aNxLWanw0Dyp8KaIX0xwtt";
 
-  
   factory AppClass() {
     return _mAppClass;
   }
@@ -35,12 +35,10 @@ class AppClass {
     double scrWidth = getMqWidth(context);
     if (scrWidth > 915) {
       return ScreenType.web;
-    } else if (scrWidth < 650) {
-      return ScreenType.mobile;
+    } else {
+      return ScreenType.tab;
     }
-    return ScreenType.tab;
   }
-
 
   alertDialog(context, title, msg) {
     showDialog(
@@ -50,7 +48,8 @@ class AppClass {
                 content: Text(msg),
                 actions: [
                   ElevatedButton(
-                      style: ElevatedButton.styleFrom(backgroundColor: Colors.green),
+                      style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.green),
                       onPressed: () => Navigator.pop(context),
                       child: Text('Okay'))
                 ]));

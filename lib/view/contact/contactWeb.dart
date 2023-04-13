@@ -1,10 +1,10 @@
-import 'package:flutter/cupertino.dart';
+
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:portfolio/resource/app_class.dart';
 
 import '../../resource/colors.dart';
-import '../../resource/strings.dart';
+
 
 class ContactWeb extends StatefulWidget {
   const ContactWeb({Key? key}) : super(key: key);
