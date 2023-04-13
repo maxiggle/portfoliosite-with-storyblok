@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/resource/styles.dart';
 
-enum ScreenType {tab, web }
+enum ScreenType { tab, web }
 
 class AppClass {
   static final AppClass _mAppClass = AppClass._internal();
   static BuildContext? lastContext;
   ScrollController controller = ScrollController();
 
-  /* URL */
+  // URL
   static final api =
       "https://api.storyblok.com/v2/cdn/stories?token=U5aNxLWanw0Dyp8KaIX0xwtt";
 
@@ -24,11 +24,6 @@ class AppClass {
 
   getMqHeight(BuildContext context) {
     return MediaQuery.of(context).size.height;
-  }
-
-  showSnackBar(String msg, {BuildContext? context}) {
-    ScaffoldMessenger.of(context ?? lastContext!)
-        .showSnackBar(SnackBar(content: Text(msg)));
   }
 
   ScreenType getScreenType(BuildContext context) {

@@ -87,7 +87,6 @@ class _TitleState extends ConsumerState<Tile> {
     final content = ref.watch(
       article1Provider.select((value) => value.article1),
     );
-    // print('Article Url:${content?.articleImage?.filename}');
     return InkWell(
       onTap: () async {
         await launchUrl(Uri.parse('${content?.articleUrl?.url}'));
