@@ -17,10 +17,6 @@ class ExperienceCubit extends Cubit<ExperienceState> {
     final cache = apiService.cache;
     final experienceCache = cache.experienceContent;
     emit(state.copyWith(experienceContent: experienceCache));
-
-    // final response = await apiService.getData();
-    // final experience = response.experienceContent;
-    // emit(state.copyWith(experienceContent: experience));
   }
 }
 
