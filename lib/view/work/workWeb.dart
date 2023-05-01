@@ -5,7 +5,6 @@ import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:portfolio/controller/cubit/article_cubit.dart';
 import 'package:portfolio/controller/generalController.dart';
-import 'package:portfolio/resource/app_class.dart';
 import 'package:url_launcher/url_launcher.dart';
 import '../../resource/colors.dart';
 
@@ -90,8 +89,6 @@ class _TitleState extends ConsumerState<Tile> {
     return InkWell(
       onTap: () async {
         await launchUrl(Uri.parse('${content?.articleUrl?.url}'));
-        AppClass().alertDialog(context, 'Not Found',
-            'Sorry the project you requested not found in the repository');
       },
       onHover: (bool) {
         if (bool) {
