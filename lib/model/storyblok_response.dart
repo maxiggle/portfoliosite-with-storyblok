@@ -93,7 +93,7 @@ class Story {
     DateTime? publishedAt,
     int? id,
     String? uuid,
-    dynamic? content,
+    dynamic content,
     String? slug,
     String? fullSlug,
     bool? isStartpage,

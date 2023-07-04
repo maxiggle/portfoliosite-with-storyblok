@@ -12,7 +12,7 @@ dependencies:
   flutter:
     sdk: flutter
 
-  google_fonts: ^2.3.3 #font
+  google_fonts: ^5.1.0 #font
   flutter_svg: ^1.1.1+1 #svg
   hooks_riverpod: ^2.1.3 #state management
   riverbloc: ^2.0.0
@@ -20,7 +20,6 @@ dependencies:
   url_launcher: ^6.1.5 #URLauncher
   scroll_to_index: ^3.0.1 #scrollToIndex
   equatable: ^2.0.5
-  link_preview_generator: ^1.2.0
   any_link_preview: ^3.0.0
 
 dev_dependencies:
