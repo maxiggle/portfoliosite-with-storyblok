@@ -1,15 +1,14 @@
-
 import 'dart:convert';
 import 'package:flutter/foundation.dart';
 
 class StoryblokResponse {
+  final List<Story>? stories;
+  final int? cv;
+
   StoryblokResponse({
     this.stories,
     this.cv,
   });
-
-  final List<Story>? stories;
-  final int? cv;
 
   StoryblokResponse copyWith({
     List<Story>? stories,
@@ -68,10 +67,7 @@ class Story {
     this.content,
     this.slug,
     this.fullSlug,
-    this.isStartpage,
-    this.groupId,
     this.firstPublishedAt,
-    this.lang,
   });
 
   final String? name;
@@ -82,11 +78,7 @@ class Story {
   final dynamic content;
   final String? slug;
   final String? fullSlug;
-  final bool? isStartpage;
-  final String? groupId;
   final DateTime? firstPublishedAt;
-  final String? lang;
-
   Story copyWith({
     String? name,
     DateTime? createdAt,
@@ -96,10 +88,7 @@ class Story {
     dynamic content,
     String? slug,
     String? fullSlug,
-    bool? isStartpage,
-    String? groupId,
     DateTime? firstPublishedAt,
-    String? lang,
   }) {
     return Story(
       name: name ?? this.name,
@@ -110,10 +99,7 @@ class Story {
       content: content ?? this.content,
       slug: slug ?? this.slug,
       fullSlug: fullSlug ?? this.fullSlug,
-      isStartpage: isStartpage ?? this.isStartpage,
-      groupId: groupId ?? this.groupId,
       firstPublishedAt: firstPublishedAt ?? this.firstPublishedAt,
-      lang: lang ?? this.lang,
     );
   }
 
@@ -127,10 +113,7 @@ class Story {
       'content': content,
       'slug': slug,
       'fullSlug': fullSlug,
-      'isStartpage': isStartpage,
-      'groupId': groupId,
       'firstPublishedAt': firstPublishedAt?.millisecondsSinceEpoch,
-      'lang': lang,
     };
   }
 
@@ -148,12 +131,9 @@ class Story {
       content: map['content'] ?? null,
       slug: map['slug'],
       fullSlug: map['fullSlug'],
-      isStartpage: map['isStartpage'],
-      groupId: map['groupId'],
       firstPublishedAt: map['firstPublishedAt'] != null
           ? DateTime.fromMillisecondsSinceEpoch(map['firstPublishedAt'])
           : null,
-      lang: map['lang'],
     );
   }
 
@@ -163,7 +143,7 @@ class Story {
 
   @override
   String toString() {
-    return 'Story(name: $name, createdAt: $createdAt, publishedAt: $publishedAt, id: $id, uuid: $uuid, content: $content, slug: $slug, fullSlug: $fullSlug, isStartpage: $isStartpage, groupId: $groupId, firstPublishedAt: $firstPublishedAt, lang: $lang)';
+    return 'Story(name: $name, createdAt: $createdAt, publishedAt: $publishedAt, id: $id, uuid: $uuid, content: $content, slug: $slug, fullSlug: $fullSlug,firstPublishedAt: $firstPublishedAt)';
   }
 
   @override
@@ -179,10 +159,7 @@ class Story {
         other.content == content &&
         other.slug == slug &&
         other.fullSlug == fullSlug &&
-        other.isStartpage == isStartpage &&
-        other.groupId == groupId &&
-        other.firstPublishedAt == firstPublishedAt &&
-        other.lang == lang;
+        other.firstPublishedAt == firstPublishedAt;
   }
 
   @override
@@ -195,9 +172,6 @@ class Story {
         content.hashCode ^
         slug.hashCode ^
         fullSlug.hashCode ^
-        isStartpage.hashCode ^
-        groupId.hashCode ^
-        firstPublishedAt.hashCode ^
-        lang.hashCode;
+        firstPublishedAt.hashCode;
   }
 }

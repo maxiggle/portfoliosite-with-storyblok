@@ -18,7 +18,7 @@ class IntroWeb extends ConsumerStatefulWidget {
 class _IntroWebState extends ConsumerState<IntroWeb> {
   @override
   Widget build(BuildContext context) {
-    final introText = ref.watch(portfolioHomeContentProvider
+    final heroText = ref.watch(portfolioHomeContentProvider
         .select((value) => value.introContent));
     return Container(
       color: Colors.transparent,
@@ -33,16 +33,16 @@ class _IntroWebState extends ConsumerState<IntroWeb> {
               Padding(
                 padding: const EdgeInsets.only(left: 8.0, top: 50),
                 child: Text(
-                  '${introText?.headline1}',
+                  '${heroText?.headline1}',
                   style: TextStyle(
                       color: AppColors().neonColor,
                       fontSize: 18,
                       fontFamily: 'sfmono'),
                 ),
               ),
-              MyName(heroText: introText),
-              Platforms(heroText: introText),
-              WorkSummary(heroText: introText),
+              MyName(heroText: heroText),
+              Platforms(heroText: heroText),
+              WorkSummary(heroText: heroText),
               CallToAction(widget: widget)
             ],
           ),
